@@ -1,0 +1,12 @@
+<h2>Add a New Chapter</h2>
+
+<form (ngSubmit)="saveChapter()" >
+  <div>
+    <label for="title">name:</label>
+    <input type="text" id="name" [(ngModel)]="chapter.name" name="name" required>
+  </div>
+
+
+  <button type="submit">Save Chapter</button>
+</form>
+

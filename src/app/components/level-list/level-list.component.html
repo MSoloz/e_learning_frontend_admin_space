@@ -32,6 +32,19 @@
       </tbody>
 
   </table>
+  <div class="pagination-container">
+    <mat-paginator
+    [pageSizeOptions]="[6]"
+
+      [pageSize]="pageSize"
+      showFirstLastButtons
+      [length]="levels.length"
+      (page)="ONPageChange($event)"
+      id="listing_pagination"
+
+      
+    ></mat-paginator>
+  </div>
 
 
 </div>
