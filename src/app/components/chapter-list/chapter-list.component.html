@@ -1,5 +1,5 @@
-<a routerLink="/h/add-module" mat-button color="primary">Create New</a>
-<div *ngIf="modules" class="table-container">
+<a routerLink="/h/add-chapter" mat-button color="primary">Create New</a>
+<div *ngIf="chapters" class="table-container">
   <table class="table table-striped">
       <thead>
           <tr>
@@ -9,16 +9,16 @@
           </tr>
       </thead>
       <tbody>
-        <ng-container *ngIf="modules.length > 0; else noRecords">
-          <tr *ngFor="let module of modules">
-                  <td>{{ module.id }}</td>
-                  <td>{{ module.name }}</td>
+        <ng-container *ngIf="chapters.length > 0; else noRecords">
+          <tr *ngFor="let chapter of chapters">
+                  <td>{{ chapter.id }}</td>
+                  <td>{{ chapter.name }}</td>
 
                   <td>
 
                       <a href="" class="btn btn-info text-white active">show</a>
-                      <a  class="btn btn-success text-white active" routerLink="/h/edit-module/{{module.id}}">edit</a>
-                        <a href="" class="btn btn-danger active"  (click)="deleteModule(module.id)">Delete</a>
+                      <a  class="btn btn-success text-white active" routerLink="/h/edit-chapter/{{chapter.id}}">edit</a>
+                        <a href="" class="btn btn-danger active"  (click)="deleteChapter(chapter.id)">Delete</a>
 
 
                   </td>
@@ -32,20 +32,19 @@
       </tbody>
 
   </table>
-     
   <div class="pagination-container">
     <mat-paginator
     [pageSizeOptions]="[6]"
 
       [pageSize]="pageSize"
       showFirstLastButtons
-      [length]="modules.length"
-      (page)="onPageChange($event)"
+      [length]="chapters.length"
+      (page)="OnPageChange($event)"
       id="listing_pagination"
 
       
     ></mat-paginator>
   </div>
 
-</div>
 
+</div>

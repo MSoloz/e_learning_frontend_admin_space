@@ -1,53 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { Level } from 'src/app/models/level';
+import { Chapter } from 'src/app/models/chapter';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LevelService } from 'src/app/services/level/level.service';
+import { ChapterService } from 'src/app/services/chapter/chapter.service';
+import { RouterModule } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
-@Component({
-  selector: 'app-level-list',
-  templateUrl: './level-list.component.html',
-  styleUrls: ['./level-list.component.scss']
-})
-export class LevelListComponent implements OnInit{
 
-  levels: Array<Level> = [];
+@Component({
+  selector: 'app-chapter-list',
+  templateUrl: './chapter-list.component.html',
+  styleUrls: ['./chapter-list.component.scss']
+})
+export class ChapterListComponent implements OnInit{
+
+  chapters: Array<Chapter> = [];
   pageSize: number = 6;
   currentPage: number = 0;
   constructor(
-    private service: LevelService,
+    private service: ChapterService,
     private router:Router,
     private route:ActivatedRoute,
   ) {
   }
 
   ngOnInit(): void {
-    this.loadLevels(this.currentPage);
+    this.loadChapters(this.currentPage);
+
 
   }
-  ONPageChange(event: PageEvent) {
+  OnPageChange(event: PageEvent) {
     this.currentPage = event.pageIndex;
-    this.loadLevels(this.currentPage);
+    this.loadChapters(this.currentPage);
   }
-  loadLevels(pageIndex: number) {
+  loadChapters(pageIndex: number) {
     const startIndex = pageIndex * this.pageSize;
     const endIndex = startIndex + this.pageSize;
 
-    this.service.getAllLevels()
+    this.service.getAllChapters()
       .subscribe({
         next: (result) => {
-          this.levels = result.slice(startIndex, endIndex);
+          this.chapters = result.slice(startIndex, endIndex);
         }
       });
   }
+  deleteChapter(id:any) {
 
-  deleteLevel(id:any) {
-
-    this.service.deleteLevel(id)
+    this.service.deleteChapter(id)
     .subscribe(result => {
       if (result != null) {
-        this.router.navigate(['/h/levels']);
+        this.router.navigate(['/h/chapters']);
       } else {
         console.log("not found");
         console.log(result);

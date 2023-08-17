@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Module } from 'src/app/models/module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModuleService } from 'src/app/services/module/module.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-module-list',
@@ -11,6 +12,9 @@ import { ModuleService } from 'src/app/services/module/module.service';
 export class ModuleListComponent implements OnInit{
 
   modules: Array<Module> = [];
+  pageSize: number = 6;
+  currentPage: number = 0;
+
 
   constructor(
     private service: ModuleService,
@@ -20,13 +24,24 @@ export class ModuleListComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.loadModules(this.currentPage);
+
+
+  }
+  onPageChange(event: PageEvent) {
+    this.currentPage = event.pageIndex;
+    this.loadModules(this.currentPage);
+  }
+  loadModules(pageIndex: number) {
+    const startIndex = pageIndex * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+
     this.service.getAllModules()
       .subscribe({
         next: (result) => {
-          this.modules= result;
+          this.modules = result.slice(startIndex, endIndex);
         }
       });
-
   }
 
   deleteModule(id:any) {
@@ -41,6 +56,8 @@ export class ModuleListComponent implements OnInit{
       }
     });
   }
+
+
 
 
 }

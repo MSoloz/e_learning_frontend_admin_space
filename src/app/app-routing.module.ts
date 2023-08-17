@@ -9,6 +9,9 @@ import { EditLevelComponent } from './components/edit-level/edit-level.component
 import { ModuleListComponent } from './components/module-list/module-list.component';
 import { EditModuleComponent } from './components/edit-module/edit-module.component';
 import { AddModuleComponent } from './components/add-module/add-module.component';
+import { ChapterListComponent } from './components/chapter-list/chapter-list.component';
+import { AddChapterComponent } from './components/add-chapter/add-chapter.component';
+import { EditChapterComponent } from './components/edit-chapter/edit-chapter.component';
 
 const routes: Routes = [
 
@@ -51,7 +54,20 @@ const routes: Routes = [
     {
       path :"edit-module/:id",component:EditModuleComponent
 
-    }
+    },  
+    {
+      path :"chapters",component:ChapterListComponent
+
+    },
+    {
+      path :"add-chapter",component:AddChapterComponent
+
+    },
+    {
+      path :"edit-chapter",component:EditChapterComponent
+
+    },
+   
     
   
   ]

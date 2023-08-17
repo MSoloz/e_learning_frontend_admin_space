@@ -19,6 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterModule } from '@angular/router'; // Import RouterModule
+import { AddChapterComponent } from './components/add-chapter/add-chapter.component';
+import { EditChapterComponent } from './components/edit-chapter/edit-chapter.component';
+import { ChapterListComponent } from './components/chapter-list/chapter-list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PageEvent } from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +39,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EditLevelComponent,
     ModuleListComponent,
     AddModuleComponent,
-    EditModuleComponent
+    EditModuleComponent,
+    AddChapterComponent,
+    EditChapterComponent,
+    ChapterListComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +56,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-
+    RouterModule ,
+    MatPaginatorModule,
+    NgxPaginationModule,
 
 
   ],
