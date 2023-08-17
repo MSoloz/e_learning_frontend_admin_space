@@ -1,15 +1,12 @@
-<h2>Add a New Level</h2>
-
-<form (ngSubmit)="editLevel()" >
-  <div>
-    <label for="title">name:</label>
-    <input type="text" id="name" [(ngModel)]="level.name" name="name" required>
-  </div>
-
-  <div>
-    <label for="price">description:</label>
-    <input type="text" id="description" [(ngModel)]="level.description" name="description" required>
-  </div>
-  <button type="submit">Save Level</button>
-</form>
-
+<mat-card>
+  <mat-card-content>
+    <h1>Edit Level</h1>
+    <form [formGroup]="levelForm" (ngSubmit)="editLevel()">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Level" formControlName="name">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Edit</button>
+    </form>
+  </mat-card-content>
+</mat-card>

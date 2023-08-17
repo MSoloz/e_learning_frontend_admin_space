@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+      <h1>Edit Module</h1>
+      <form [formGroup]="moduleForm" (ngSubmit)="editModule()">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Module" formControlName="name">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Edit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

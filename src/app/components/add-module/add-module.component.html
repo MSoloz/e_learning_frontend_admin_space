@@ -1,0 +1,12 @@
+<h2>Add a New Module</h2>
+
+<form (ngSubmit)="saveModule()" >
+  <div>
+    <label for="title">name:</label>
+    <input type="text" id="name" [(ngModel)]="module.name" name="name" required>
+  </div>
+
+
+  <button type="submit">Save Module</button>
+</form>
+

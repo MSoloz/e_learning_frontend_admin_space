@@ -1,5 +1,5 @@
-<a routerLink="/h/add-level" mat-button color="primary">Create New</a>
-<div *ngIf="levels" class="table-container">
+<a routerLink="/h/add-module" mat-button color="primary">Create New</a>
+<div *ngIf="modules" class="table-container">
   <table class="table table-striped">
       <thead>
           <tr>
@@ -9,16 +9,16 @@
           </tr>
       </thead>
       <tbody>
-        <ng-container *ngIf="levels.length > 0; else noRecords">
-          <tr *ngFor="let level of levels">
-                  <td>{{ level.id }}</td>
-                  <td>{{ level.name }}</td>
+        <ng-container *ngIf="modules.length > 0; else noRecords">
+          <tr *ngFor="let module of modules">
+                  <td>{{ module.id }}</td>
+                  <td>{{ module.name }}</td>
 
                   <td>
 
                       <a href="" class="btn btn-info text-white active">show</a>
-                      <a  class="btn btn-success text-white active" routerLink="/h/edit-level/{{level.id}}">edit</a>
-                        <a href="" class="btn btn-danger active"  (click)="deleteLevel(level.id)">Delete</a>
+                      <a  class="btn btn-success text-white active" routerLink="/h/edit-module/{{module.id}}">edit</a>
+                        <a href="" class="btn btn-danger active"  (click)="deleteModule(module.id)">Delete</a>
 
 
                   </td>

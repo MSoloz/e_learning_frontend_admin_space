@@ -1,4 +1,4 @@
-export interface Level {
+export interface Module {
     id?:number;
     name?: string;
 }

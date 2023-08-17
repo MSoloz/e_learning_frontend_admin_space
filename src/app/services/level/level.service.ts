@@ -18,10 +18,11 @@ export class LevelService {
     return this.http.get<Array<Level>>(levelsUrl);
   }
 
-  getLevel() {
-    const levelsUrl = `http://127.0.0.1:8000/api/niveaux/`;
-    return this.http.get<Array<Level>>(levelsUrl);
-  }
+  getLevelById(id:any){
+
+    return this.http.get(`${this.baseUrl}`+'api/niveaux/'+id+'/');
+  
+    }
 
   createLevel(level: Level) {
     const productsUrl = `http://127.0.0.1:8000/api/niveaux/create/`;
@@ -29,12 +30,12 @@ export class LevelService {
   }
 
   deleteLevel(id: number) {
-    return this.http.delete(`${this.baseUrl}/api/niveaux/`+id+'/delete/');
+    return this.http.delete(`${this.baseUrl}api/niveaux/`+id+'/delete/');
   }
 
   updateLevel(id:number,level:Level){
 
-    return this.http.put(`${this.baseUrl}/api/niveaux/`+id+'/update/', level);
+    return this.http.put(`${this.baseUrl}api/niveaux/`+id+'/update/', level);
     
    }  
   

@@ -1,37 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { Level } from 'src/app/models/level';
+import { Module } from 'src/app/models/module';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LevelService } from 'src/app/services/level/level.service';
+import { ModuleService } from 'src/app/services/module/module.service';
 
 @Component({
-  selector: 'app-level-list',
-  templateUrl: './level-list.component.html',
-  styleUrls: ['./level-list.component.scss']
+  selector: 'app-module-list',
+  templateUrl: './module-list.component.html',
+  styleUrls: ['./module-list.component.scss']
 })
-export class LevelListComponent implements OnInit{
+export class ModuleListComponent implements OnInit{
 
-  levels: Array<Level> = [];
+  modules: Array<Module> = [];
 
   constructor(
-    private service: LevelService,
+    private service: ModuleService,
     private router:Router,
     private route:ActivatedRoute,
   ) {
   }
 
   ngOnInit(): void {
-    this.service.getAllLevels()
+    this.service.getAllModules()
       .subscribe({
         next: (result) => {
-          this.levels= result;
+          this.modules= result;
         }
       });
 
   }
 
-  deleteLevel(id:any) {
+  deleteModule(id:any) {
 
-    this.service.deleteLevel(id)
+    this.service.deleteModule(id)
     .subscribe(result => {
       if (result != null) {
         this.router.navigate(['/h/levels']);

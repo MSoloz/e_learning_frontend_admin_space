@@ -6,6 +6,9 @@ import { LevelListComponent } from './components/level-list/level-list.component
 import { AddLevelComponent } from './components/add-level/add-level.component';
 import { QuestionListComponent } from './components/question-list/question-list.component';
 import { EditLevelComponent } from './components/edit-level/edit-level.component';
+import { ModuleListComponent } from './components/module-list/module-list.component';
+import { EditModuleComponent } from './components/edit-module/edit-module.component';
+import { AddModuleComponent } from './components/add-module/add-module.component';
 
 const routes: Routes = [
 
@@ -37,6 +40,18 @@ const routes: Routes = [
       path :"edit-level/:id",component:EditLevelComponent
 
     },
+    {
+      path :"modules",component:ModuleListComponent
+
+    },
+    {
+      path :"add-module",component:AddModuleComponent
+
+    },
+    {
+      path :"edit-module/:id",component:EditModuleComponent
+
+    }
     
   
   ]

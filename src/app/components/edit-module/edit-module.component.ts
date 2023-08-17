@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Level } from 'src/app/models/level';
+import { Module } from 'src/app/models/module';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { LevelService } from 'src/app/services/level/level.service';
+import { ModuleService } from 'src/app/services/module/module.service';
 
 @Component({
-  selector: 'app-edit-level',
-  templateUrl: './edit-level.component.html',
-  styleUrls: ['./edit-level.component.scss']
+  selector: 'app-edit-module',
+  templateUrl: './edit-module.component.html',
+  styleUrls: ['./edit-module.component.scss']
 })
-export class EditLevelComponent implements OnInit{
-  levelForm!: FormGroup;
+export class EditModuleComponent implements OnInit{
+  moduleForm!: FormGroup;
 
   
-  level:Level ={};
+  module:Module ={};
 
   id:any;
   editData: any;
 
-  levelId:any;
+  moduleId:any;
 
   constructor(
-    private service:LevelService,
+    private service:ModuleService,
     private router:Router,
     private route:ActivatedRoute,
-    private levelsService: LevelService,
+    private modulesService: ModuleService,
 
     ) {
     }
@@ -36,31 +36,31 @@ export class EditLevelComponent implements OnInit{
       this.id = this.route.snapshot.params['id']; // Get the id from route params
 
       this.route.paramMap.subscribe(params => {  this.id = params.get('id'); });
-      this.levelForm = new FormGroup({
+      this.moduleForm = new FormGroup({
         name: new FormControl('')
       });
-      this.levelsService.getLevelById(this.id).subscribe((res) => {
+      this.modulesService.getModuleById(this.id).subscribe((res) => {
         this.editData = res;
         console.log(this.editData);
 
         if (res != null) {
-          this.levelForm.controls['name'].setValue(this.editData.name); // Changed 'firstName' to 'description'
+          this.moduleForm.controls['name'].setValue(this.editData.name); // Changed 'firstName' to 'description'
         }
       });
     }
     
   
 
-    editLevel() {
-      console.log(this.levelForm.value);
+    editModule() {
+      console.log(this.moduleForm.value);
     
       // Update the properties of the 'this.level' object with form values
-      this.level.name = this.levelForm.get('name')?.value;
+      this.module.name = this.moduleForm.get('name')?.value;
     
-      this.levelsService.updateLevel(this.id, this.level)
+      this.modulesService.updateModule(this.id, this.module)
         .subscribe(result => {
           if (result != null) {
-            this.router.navigate(['/h/levels']);
+            this.router.navigate(['/h/modules']);
           } else {
             console.log("not found");
             console.log(result);
