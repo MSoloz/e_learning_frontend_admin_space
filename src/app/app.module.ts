@@ -26,6 +26,9 @@ import { ChapterListComponent } from './components/chapter-list/chapter-list.com
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PageEvent } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddSkillComponent } from './components/add-skill/add-skill.component';
+import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
+import { SkillListComponent } from './components/skill-list/skill-list.component';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddChapterComponent,
     EditChapterComponent,
     ChapterListComponent,
+    AddSkillComponent,
+    EditSkillComponent,
+    SkillListComponent,
 
 
   ],

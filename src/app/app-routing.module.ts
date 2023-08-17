@@ -12,6 +12,9 @@ import { AddModuleComponent } from './components/add-module/add-module.component
 import { ChapterListComponent } from './components/chapter-list/chapter-list.component';
 import { AddChapterComponent } from './components/add-chapter/add-chapter.component';
 import { EditChapterComponent } from './components/edit-chapter/edit-chapter.component';
+import { SkillListComponent } from './components/skill-list/skill-list.component';
+import { AddSkillComponent } from './components/add-skill/add-skill.component';
+import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
 
 const routes: Routes = [
 
@@ -64,7 +67,19 @@ const routes: Routes = [
 
     },
     {
-      path :"edit-chapter",component:EditChapterComponent
+      path :"edit-chapter/:id",component:EditChapterComponent
+
+    },
+    {
+      path :"skills",component:SkillListComponent
+
+    },
+    {
+      path :"add-skill",component:AddSkillComponent
+
+    },
+    {
+      path :"edit-skill/:id",component:EditSkillComponent
 
     },
    

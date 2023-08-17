@@ -1,0 +1,12 @@
+<h2>Add a New Skill</h2>
+
+<form (ngSubmit)="saveSkill()" >
+  <div>
+    <label for="title">name:</label>
+    <input type="text" id="name" [(ngModel)]="skill.name" name="name" required>
+  </div>
+
+
+  <button type="submit">Save Skill</button>
+</form>
+

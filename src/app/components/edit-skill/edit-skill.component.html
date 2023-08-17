@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+      <h1>Edit Skill</h1>
+      <form [formGroup]="skillForm" (ngSubmit)="editSkill()">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Skill" formControlName="name">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Edit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
