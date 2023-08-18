@@ -1,0 +1,12 @@
+<h2>Add a New Sub-Skill</h2>
+
+<form (ngSubmit)="saveSubskill()" >
+  <div>
+    <label for="title">name:</label>
+    <input type="text" id="name" [(ngModel)]="subskill.name" name="name" required>
+  </div>
+
+
+  <button type="submit">Save Sub-Skill</button>
+</form>
+

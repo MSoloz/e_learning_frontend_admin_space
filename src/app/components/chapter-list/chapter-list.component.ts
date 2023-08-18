@@ -17,6 +17,7 @@ export class ChapterListComponent implements OnInit{
   chapters: Array<Chapter> = [];
   pageSize: number = 6;
   currentPage: number = 0;
+  totalItems: number = 0;
   constructor(
     private service: ChapterService,
     private router:Router,
@@ -34,15 +35,14 @@ export class ChapterListComponent implements OnInit{
     this.loadChapters(this.currentPage);
   }
   loadChapters(pageIndex: number) {
-    const startIndex = pageIndex * this.pageSize;
-    const endIndex = startIndex + this.pageSize;
-
-    this.service.getAllChapters()
-      .subscribe({
-        next: (result) => {
-          this.chapters = result.slice(startIndex, endIndex);
-        }
-      });
+    this.service.getAllChapters().subscribe({
+      next: (result) => {
+        this.totalItems = result.length;
+        const startIndex = pageIndex * this.pageSize;
+        const endIndex = startIndex + this.pageSize;
+        this.chapters = result.slice(startIndex, endIndex);
+      }
+    });
   }
   deleteChapter(id:any) {
 

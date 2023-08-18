@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+      <h1>Edit Sub-skill</h1>
+      <form [formGroup]="subskillForm" (ngSubmit)="editSubskill()">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Subskill" formControlName="name">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Edit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

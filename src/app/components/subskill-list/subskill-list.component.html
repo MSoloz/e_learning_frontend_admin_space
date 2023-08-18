@@ -1,5 +1,5 @@
-<a routerLink="/h/add-chapter" mat-button color="primary">Create New</a>
-<div *ngIf="chapters" class="table-container">
+<a routerLink="/h/add-subskill" mat-button color="primary">Create New</a>
+<div *ngIf="subskills" class="table-container">
   <table class="table table-striped">
       <thead>
           <tr>
@@ -9,15 +9,15 @@
           </tr>
       </thead>
       <tbody>
-        <ng-container *ngIf="chapters.length > 0; else noRecords">
-          <tr *ngFor="let chapter of chapters">
-                  <td>{{ chapter.id }}</td>
-                  <td>{{ chapter.name }}</td>
+        <ng-container *ngIf="subskills.length > 0; else noRecords">
+          <tr *ngFor="let subskill of subskills">
+                  <td>{{ subskill.id }}</td>
+                  <td>{{ subskill.name }}</td>
 
                   <td>
 
-                      <a  class="btn btn-success text-white active" routerLink="/h/edit-chapter/{{chapter.id}}">edit</a>
-                        <a href="" class="btn btn-danger active"  (click)="deleteChapter(chapter.id)">Delete</a>
+                      <a  class="btn btn-success text-white active" routerLink="/h/edit-subskill/{{subskill.id}}">edit</a>
+                        <a href="" class="btn btn-danger active"  (click)="deleteSubskill(subskill.id)">Delete</a>
 
 
                   </td>
@@ -37,7 +37,7 @@
     [pageSize]="pageSize"
     showFirstLastButtons
     [length]="totalItems"
-    (page)="OnPageChange($event)"
+    (page)="ONpagechange($event)"
     id="listing_pagination"
   ></mat-paginator>
   </div>

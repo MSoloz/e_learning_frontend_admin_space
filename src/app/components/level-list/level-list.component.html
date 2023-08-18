@@ -16,7 +16,6 @@
 
                   <td>
 
-                      <a href="" class="btn btn-info text-white active">show</a>
                       <a  class="btn btn-success text-white active" routerLink="/h/edit-level/{{level.id}}">edit</a>
                         <a href="" class="btn btn-danger active"  (click)="deleteLevel(level.id)">Delete</a>
 
@@ -35,15 +34,12 @@
   <div class="pagination-container">
     <mat-paginator
     [pageSizeOptions]="[6]"
-
-      [pageSize]="pageSize"
-      showFirstLastButtons
-      [length]="levels.length"
-      (page)="ONPageChange($event)"
-      id="listing_pagination"
-
-      
-    ></mat-paginator>
+    [pageSize]="pageSize"
+    showFirstLastButtons
+    [length]="totalItems"
+    (page)="ONPageChange($event)"
+    id="listing_pagination"
+  ></mat-paginator>
   </div>
 
 

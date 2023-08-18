@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Module } from 'src/app/models/module';
+import { FormControl, FormGroup } from '@angular/forms';
+
 import { ModuleService } from 'src/app/services/module/module.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { ModuleService } from 'src/app/services/module/module.service';
   styleUrls: ['./add-module.component.scss']
 })
 export class AddModuleComponent {
+  moduleForm!: FormGroup;
 
   module:Module ={};
 
@@ -18,8 +21,15 @@ export class AddModuleComponent {
     ) {
 
     }
-
+    ngOnInit(): void {
+      this.moduleForm = new FormGroup({
+        name: new FormControl(''),
+      });
+    }
   saveModule() {
+    const formData = new FormData();
+
+    formData.append('name', this.moduleForm.get('name')?.value);
     this.service.createModule(this.module)
       .subscribe({
         next: (result) => {

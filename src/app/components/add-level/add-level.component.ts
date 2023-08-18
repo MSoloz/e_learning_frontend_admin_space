@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Level } from 'src/app/models/level';
+import { FormControl, FormGroup } from '@angular/forms';
 import { LevelService } from 'src/app/services/level/level.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { LevelService } from 'src/app/services/level/level.service';
   styleUrls: ['./add-level.component.scss']
 })
 export class AddLevelComponent {
+  levelForm!: FormGroup;
 
   level:Level ={};
 
@@ -18,8 +20,16 @@ export class AddLevelComponent {
     ) {
 
     }
+    ngOnInit(): void {
+      this.levelForm = new FormGroup({
+        name: new FormControl(''),
+      });
+    }
 
   saveLevel() {
+    const formData = new FormData();
+
+    formData.append('name', this.levelForm.get('name')?.value);
     this.service.createLevel(this.level)
       .subscribe({
         next: (result) => {

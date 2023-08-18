@@ -16,7 +16,6 @@
 
                   <td>
 
-                      <a href="" class="btn btn-info text-white active">show</a>
                       <a  class="btn btn-success text-white active" routerLink="/h/edit-skill/{{skill.id}}">edit</a>
                         <a href="" class="btn btn-danger active"  (click)="deleteSkill(skill.id)">Delete</a>
 
@@ -35,15 +34,12 @@
   <div class="pagination-container">
     <mat-paginator
     [pageSizeOptions]="[6]"
-
-      [pageSize]="pageSize"
-      showFirstLastButtons
-      [length]="skills.length"
-      (page)="ONpageChange($event)"
-      id="listing_pagination"
-
-      
-    ></mat-paginator>
+    [pageSize]="pageSize"
+    showFirstLastButtons
+    [length]="totalItems"
+    (page)="ONpageChange($event)"
+    id="listing_pagination"
+  ></mat-paginator>
   </div>
 
 

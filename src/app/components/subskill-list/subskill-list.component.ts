@@ -1,53 +1,56 @@
 import { Component, OnInit } from '@angular/core';
-import { Level } from 'src/app/models/level';
+import { Subskill } from 'src/app/models/subskill';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LevelService } from 'src/app/services/level/level.service';
+import { SubskillService } from 'src/app/services/subskill/subskill.service';
 import { PageEvent } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 @Component({
-  selector: 'app-level-list',
-  templateUrl: './level-list.component.html',
-  styleUrls: ['./level-list.component.scss']
+  selector: 'app-subskill-list',
+  templateUrl: './subskill-list.component.html',
+  styleUrls: ['./subskill-list.component.scss']
 })
-export class LevelListComponent implements OnInit{
+export class SubskillListComponent implements OnInit{
 
-  levels: Array<Level> = [];
+  subskills: Array<Subskill> = [];
+
+
   pageSize: number = 6;
   currentPage: number = 0;
   totalItems: number = 0;
+
   constructor(
-    private service: LevelService,
+    private service: SubskillService,
     private router:Router,
     private route:ActivatedRoute,
   ) {
   }
 
   ngOnInit(): void {
-    this.loadLevels(this.currentPage);
+    this.loadSubskills(this.currentPage);
 
   }
-  ONPageChange(event: PageEvent) {
+  ONpagechange(event: PageEvent) {
     this.currentPage = event.pageIndex;
-    this.loadLevels(this.currentPage);
+    this.loadSubskills(this.currentPage);
   }
-  loadLevels(pageIndex: number) {
-    this.service.getAllLevels().subscribe({
+  loadSubskills(pageIndex: number) {
+    this.service.getAllSubskills().subscribe({
       next: (result) => {
         this.totalItems = result.length;
         const startIndex = pageIndex * this.pageSize;
         const endIndex = startIndex + this.pageSize;
-        this.levels = result.slice(startIndex, endIndex);
+        this.subskills = result.slice(startIndex, endIndex);
       }
     });
   }
 
-  deleteLevel(id:any) {
+  deleteSubskill(id:any) {
 
-    this.service.deleteLevel(id)
+    this.service.deleteSubskill(id)
     .subscribe(result => {
       if (result != null) {
-        this.router.navigate(['/h/levels']);
+        this.router.navigate(['/h/subskills']);
       } else {
         console.log("not found");
         console.log(result);

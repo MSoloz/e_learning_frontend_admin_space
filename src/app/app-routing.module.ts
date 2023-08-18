@@ -15,6 +15,9 @@ import { EditChapterComponent } from './components/edit-chapter/edit-chapter.com
 import { SkillListComponent } from './components/skill-list/skill-list.component';
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
 import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
+import { AddSubskillComponent } from './components/add-subskill/add-subskill.component';
+import { EditSubskillComponent } from './components/edit-subskill/edit-subskill.component';
+import { SubskillListComponent } from './components/subskill-list/subskill-list.component';
 
 const routes: Routes = [
 
@@ -82,7 +85,18 @@ const routes: Routes = [
       path :"edit-skill/:id",component:EditSkillComponent
 
     },
-   
+    {
+      path :"subskills",component:SubskillListComponent
+
+    },
+    {
+      path :"add-subskill",component:AddSubskillComponent
+
+    },
+    {
+      path :"edit-subskill/:id",component:EditSubskillComponent
+
+    },
     
   
   ]

@@ -29,6 +29,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
 import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
 import { SkillListComponent } from './components/skill-list/skill-list.component';
+import { AddSubskillComponent } from './components/add-subskill/add-subskill.component';
+import { EditSubskillComponent } from './components/edit-subskill/edit-subskill.component';
+import { SubskillListComponent } from './components/subskill-list/subskill-list.component';
 
 
 @NgModule({
@@ -49,6 +52,9 @@ import { SkillListComponent } from './components/skill-list/skill-list.component
     AddSkillComponent,
     EditSkillComponent,
     SkillListComponent,
+    AddSubskillComponent,
+    EditSubskillComponent,
+    SubskillListComponent,
 
 
   ],

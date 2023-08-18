@@ -1,0 +1,69 @@
+/* table-styles.scss */
+.table-container {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      tbody tr {
+        &:nth-child(odd) {
+          background-color: #f9f9f9;
+        }
+      }
+  
+      a.btn {
+        margin-right: 5px;
+      }
+    }
+  
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+  
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+  
+    .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+  
+    .btn-info {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+  
+    .text-white {
+      color: #fff !important;
+    }
+  
+    .active {
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
+  
+  /* Style for the "no records found" message */
+  .no-records {
+    td {
+      text-align: center;
+      font-style: italic;
+      color: #999;
+    }
+  }
