@@ -1,4 +1,51 @@
-<h1>Hello</h1>
+<div class="login-container">
+    <div class="login-card">
+      <h2 class="text-center">Sign In</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control">
+          <div  *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger">
+
+          <div *ngIf="loginForm.get('email')?.errors?.['pattern']">not correct format.</div>
+          <div *ngIf="loginForm.get('email')?.errors?.['invalidEmail']">
+
+          </div>
+          
+        </div>
+        </div>
+        <div class="form-group">
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="alert alert-danger">
+            <!-- ... other error messages ... -->
+        </div>
+        
+          <label for="password">Password</label>
+
+          <input [type]="hidePassword ? 'password' : 'text'" id="password" formControlName="password" class="form-control" >
+          <div *ngIf="loginForm.get('password')?.errors?.['insufficientContent']">  Password must contain at least one alphabet and one number.</div>
+
+        </div>
+
+  <div style="margin-bottom: 30px; padding: 10px ;">
+
+    <input type="checkbox" (change)="toggleHidePassword()" name="hidePassword" style="order: -1; margin-top: -10px;">Appear password  </div>
+  
+  <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="alert alert-danger">
+  
+</div>
+
+
+         
+<button type="submit" [disabled]="loading" class="btn btn-primary">
+  <span *ngIf="loading">Loading...</span>
+  <span *ngIf="!loading">Submit</span>
+</button>
+
+        </form>
+
+  </div>
+</div>
+
 
 <div>
     <a routerLink="h">Go to Home</a>

@@ -1,0 +1,65 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    
+      background-image: url('https://i.familiscope.fr/1800x0/smart/2022/11/06/notre-selection-de-jeux-educatifs-scientifiques-po-.jpg');
+      
+    
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      background-color: rgb(28, 75, 104);
+  
+      .form-group {
+        margin-bottom: 15px;
+  
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+  
+        input {
+          display: block;
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+        }
+      }
+      .password-error {
+        margin-bottom:-30px; /* Adjust this value as needed */
+    }
+      .checkbox-container {
+        display:flex;
+        align-items:start; 
+      
+        label {
+          margin-left: 0px;
+        }
+      }
+      
+      
+      
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #007bff;
+      }
+    }
+  }
+  :host {
+   
+    background-image: url('https://www.cultura.com/cdn-cgi/image/width=2000/content/dam/cultura-one/2022/univers-enfant/UNI_HEAD_jeux_d_eveil.jpg');
+  
+  }
+  

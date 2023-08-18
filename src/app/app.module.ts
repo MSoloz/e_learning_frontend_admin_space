@@ -11,6 +11,7 @@ import { AddLevelComponent } from './components/add-level/add-level.component';
 import { LoginComponent } from './components/login/login.component';
 import { QuestionListComponent } from './components/question-list/question-list.component';
 import { EditLevelComponent } from './components/edit-level/edit-level.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,15 @@ import { EditLevelComponent } from './components/edit-level/edit-level.component
     NavbarComponent,
     AddLevelComponent,
     QuestionListComponent,
-    EditLevelComponent
+    EditLevelComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
