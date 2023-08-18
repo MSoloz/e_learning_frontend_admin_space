@@ -1,0 +1,23 @@
+<h2>Add a New Level</h2>
+<form (ngSubmit)="saveLevel($event)">
+  <div>
+    <label for="title">Name:</label>
+    <input type="text" id="name" [(ngModel)]="level.name" name="name" required>
+  </div>
+
+  <div>
+    <label for="price">Description:</label>
+    <input type="text" id="description" [(ngModel)]="level.description" name="description" required>
+  </div>
+  <button type="submit">Save Level</button>
+</form>
+
+<!-- Success Popup -->
+<div *ngIf="showSuccessMessage" class="popup">
+  <div class="popup-content">
+    <p>Level added successfully!</p>
+    <button (click)="closePopup()">OK</button>
+  </div>
+</div>
+
+

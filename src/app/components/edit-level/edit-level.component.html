@@ -1,0 +1,22 @@
+<h2>Add a New Level</h2>
+
+<form (ngSubmit)="editLevel($event)">
+  
+  <div>
+    <label for="title">name:</label>
+    <input type="text" id="name" [(ngModel)]="level.name" name="name" required>
+  </div>
+
+  <div>
+    <label for="price">description:</label>
+    <input type="text" id="description" [(ngModel)]="level.description" name="description" required>
+  </div>
+  <button type="submit">Edit Level</button>
+</form>
+<div *ngIf="showSuccessMessage" class="popup">
+  <div class="popup-content">
+    <p>Level updated successfully!</p>
+    <button (click)="closePopup()">OK</button>
+  </div>
+</div>
+

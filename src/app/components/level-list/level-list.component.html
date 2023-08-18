@@ -1,0 +1,71 @@
+<div class="container">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC7k+Xm5PH0z5D0pWq1E+IbbVYUew+OrCx" crossorigin="anonymous">
+
+    </head>
+    <a routerLink="/h/add-level" class="custom-create-button">
+        <span class="icon">&#43;</span> Create New
+      </a>
+
+<div *ngIf="levels" class="table-container">
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Description</th>
+              <th>actions</th>
+          </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="levels.length > 0; else noRecords">
+          <tr *ngFor="let level of levels">
+                  <td>{{ level.id }}</td>
+                  <td>{{ level.name }}</td>
+                  <td>{{ level.description }}</td>
+                  <td>
+                    
+                     
+                    <a class="btn btn-success" [routerLink]="['/h/edit-level', level.id]">
+                        <span class="icon">&#9998;</span> Edit
+                      </a>
+                      
+                      <a href="javascript:void(0);" class="btn btn-danger" (click)="selectedLevelForDeletion = level">
+                        <span class="icon">&#10006;</span> Delete
+                      </a>
+                      
+
+
+
+                        <div *ngIf="selectedLevelForDeletion" class="popup">
+                            <div class="popup-content">
+                              <p>Are you sure you want to delete this level?</p>
+                              <button (click)="deleteLevel(selectedLevelForDeletion.id); selectedLevelForDeletion = null;">Yes</button>
+                              <button (click)="selectedLevelForDeletion = null;">No</button>
+                            </div>
+                          </div>
+                          
+                      
+                  </td>
+              </tr>
+          </ng-container>
+          <ng-template #noRecords>
+              <tr>
+                  <td colspan="4">no records found</td>
+              </tr>
+          </ng-template>
+      </tbody>
+      
+  </table>
+ 
+
+</div>
+
+<div *ngIf="selectedLevelForDeletion" class="popup">
+    <div class="popup-content">
+      <p>Are you sure you want to delete this level?</p>
+      <button (click)="deleteLevel(selectedLevelForDeletion.id); selectedLevelForDeletion = null;">Yes</button>
+      <button (click)="selectedLevelForDeletion = null;">No</button>
+    </div>
+  </div>
+</div>

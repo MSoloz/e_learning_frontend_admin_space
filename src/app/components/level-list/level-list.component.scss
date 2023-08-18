@@ -1,0 +1,189 @@
+/* table-styles.scss */
+.table-container {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      tbody tr {
+        &:nth-child(odd) {
+          background-color: #f9f9f9;
+        }
+      }
+  
+      a.btn {
+        margin-right: 5px;
+      }
+    }
+  
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+  
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+  
+    .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+  
+    .btn-info {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+  
+    .text-white {
+      color: #fff !important;
+    }
+  
+    .active {
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
+  
+  /* Style for the "no records found" message */
+  .no-records {
+    td {
+      text-align: center;
+      font-style: italic;
+      color: #999;
+    }
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup button {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .custom-create-button {
+    background-color: #0a4481; /* Default background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+    margin-top: 20px;
+  }
+  
+  .container {
+    margin-top: 30px; /* Adjust the margin value as needed */
+  }
+
+  .btn i {
+    margin-right: 5px; /* Adjust the margin value as needed */
+  }
+  .btn .icon {
+    margin-right: 5px; /* Adjust the margin value as needed */
+  }
+  
+  .custom-create-button {
+    background-color: #0a4481; /* Default background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+    margin-top: 20px;
+  }
+  
+  .custom-create-button:hover {
+    background-color: #2c80da; /* Change color on hover */
+  }
+  
+  .custom-create-button:active {
+    background-color: #003366; /* Change color when clicked */
+    
+  }
+  
+  .btn-success {
+    background-color: #19772f; /* Green color for Edit button */
+    color: white; /* Text color for buttons with white text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #343b36; /* Change color on hover */
+    }
+
+    &:active {
+      background-color: #213326; /* Change color when clicked */
+    }
+  }
+  .btn-danger {
+    background-color: #dc3545; /* Red color for Delete button */
+    color: white; /* Text color for buttons with white text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #b6323a; /* Change color on hover */
+    }
+
+    &:active {
+      background-color: #f0495a; /* Change color when clicked */
+    }
+  }
+
+  
+  .btn-text-white {
+    color: white; /* Text color for buttons with white text */
+  }
+  
+  /* Add spacing between icon and text */
+  .btn .icon {
+    margin-right: 5px; /* Adjust the margin value as needed */
+  }
+  
