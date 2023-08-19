@@ -4,12 +4,18 @@
   background-color: #0b7760;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; // Adjust alignment
+  align-items: center; // Center items vertically
   padding: 10px;
 
   .links {
     display: flex;
-    gap: 20px;
+    flex-direction: column; // Stack links vertically on small screens
+    gap: 10px; // Adjust spacing
+
+    @media (min-width: 768px) {
+      flex-direction: row; // Switch back to horizontal layout on larger screens
+    }
 
     span {
       cursor: pointer;
@@ -30,47 +36,11 @@
 
 .navbar {
   @include navbar-styles;
-
-}
-// navbar-styles.scss
-
-@mixin navbar-styles {
-  background-color: #0b7760;
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-
-  .links {
-    display: flex;
-    gap: 20px;
-
-    span {
-      cursor: pointer;
-      padding: 5px 10px;
-      border-radius: 4px;
-      transition: background-color 0.3s, color 0.3s;
-
-      &:hover {
-        background-color: #555;
-      }
-
-      &.active {
-        background-color: #555;
-      }
-    }
-  }
-}
-
-.navbar {
-  @include navbar-styles;
+  
   .logo {
-    width: 50px; // Adjust as needed
-    height: 50px; // Adjust as needed
-    margin-right: 700px; // Adjust spacing
-    margin-bottom: 10px;
-    object-fit: contain; // Maintain aspect ratio
-    transform: scale(1.2); // Adjust the scaling factor as needed (1.2 is an example)
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transform: scale(1);
   }
 }
-
